@@ -20,8 +20,8 @@ const institutions = require('denmark-institution')
 `institutions` is a `Map` object, with institution numbers as keys and associated
 information as values.
 
-See http://statweb.uni-c.dk/InstRegV2/Fremfind.aspx?SearchType=AlphaInst for
-what institution numbers are.
+See http://www.dst.dk/da/Statistik/dokumentation/Times/institutionsregister/instnr
+for what institution numbers are.
 
 ```javascript
 for (let [instnr, info] of institutions) {
@@ -40,7 +40,7 @@ for (let [instnr, info] of institutions) {
     email: 'boernefam@struer.dk',
     website: '',
     updated: new Date(1381225241000)
-  }
+  };
 }
 ```
 
