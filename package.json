@@ -1,0 +1,29 @@
+{
+  "name": "denmark-institution",
+  "description": "Get information about an institution given its institution number",
+  "version": "1.0.0",
+  "author": "Andreas Madsen <amwebdk@gmail.com>",
+  "scripts": {
+    "install": "node --strong_mode install.js",
+    "test": "tap test.js"
+  },
+  "main": "./index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AndreasMadsen/denmark-institution.git"
+  },
+  "keywords": [
+    "denmark",
+    "institution",
+    "lookup"
+  ],
+  "dependencies": {
+    "endpoint": "0.4.x",
+    "cheerio": "0.19.x",
+    "async": "1.3.x"
+  },
+  "devDependencies": {
+    "tap": "1.3.x"
+  },
+  "license": "MIT"
+}
