@@ -10,8 +10,8 @@ npm install denmark-institution
 
 ## Documentation
 
-On installation this module a CSV file containing data for parents income
-in 2012 and 2011. This is then parsed and stored as a JSON file.
+On installation this module downloads a list of all institution numbers and
+fetches the details for all institutions.
 
 ```javascript
 const institutions = require('denmark-institution')
