@@ -4,7 +4,6 @@
 
 const test = require('tap').test;
 const endpoint = require('endpoint');
-const slicepoint = require('slicepoint');
 const institutions = require('./index.js');
 
 test('keys are numbers, items are objects', {timeout: 0}, function (t) {
