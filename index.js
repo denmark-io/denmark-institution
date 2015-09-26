@@ -1,12 +1,18 @@
-
 'use strict';
 'use strong';
 
-const data = require('./data.json');
+const mappoint = require('mappoint');
+const startpoint = require('startpoint');
 
-module.exports = new Map((function* () {
-  for (const row of data) {
-    row.updated = new Date(row.updated);
-    yield [row.instnr, row];
-  }
-})());
+const fetchIds = require('./lib/fetchIds.js');
+const fetchDetails = require('./lib/fetchDetails.js');
+
+function institutions() {
+  const ret = mappoint({ objectMode: true }, fetchDetails);
+  fetchIds(function (err, ids) {
+    startpoint(err === null ? ids : err, { objectMode: true })
+      .pipe(ret);
+  });
+  return ret;
+}
+module.exports = institutions;

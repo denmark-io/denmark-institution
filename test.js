@@ -3,18 +3,19 @@
 'use strong';
 
 const test = require('tap').test;
-const schools = require('./index.js');
+const endpoint = require('endpoint');
+const slicepoint = require('slicepoint');
+const institutions = require('./index.js');
 
-test('all keys are numbers', function (t) {
-  for (const key of schools.keys()) {
-    t.ok(typeof key === 'number', 'is number');
-  }
-  t.end();
-});
+test('keys are numbers, items are objects', {timeout: 0}, function (t) {
+  institutions().pipe(endpoint({ objectMode: true }, function (err, items) {
+    t.ifError(err);
+    t.ok(items.length > 0);
 
-test('all values are objects', function (t) {
-  for (const obj of schools.values()) {
-    t.ok(typeof obj === 'object' && obj !== null, 'is object');
-  }
-  t.end();
+    for (const item of items) {
+      t.ok(typeof item === 'object' && item !== null, 'item is object');
+      t.ok(typeof item.instnr === 'number', 'instr is number');
+    }
+    t.end();
+  }));
 });
