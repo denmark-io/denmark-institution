@@ -1,4 +1,4 @@
-#denmark-institution
+#denmark-institution [![Build Status](https://travis-ci.org/denmark-io/denmark-institution.svg?branch=master)](https://travis-ci.org/denmark-io/denmark-institution)
 
 > Get information about an institution given its institution number
 
